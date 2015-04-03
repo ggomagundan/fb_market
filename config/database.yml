@@ -11,11 +11,11 @@ default: &default
 
 development:
   <<: *default
-  #host: 14.63.172.11
-  #port: 33066
+  host: 14.63.172.11
+  port: 33066
   database: marketing
   username: 'root'
-  password: '13245'
+  password: 'rntekfkekrekr1!'
   socket: /tmp/mysql.sock
 
 
@@ -28,4 +28,11 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  host: 14.63.172.11
+  port: 33066
+  database: marketing
+  username: 'root'
+  password: 'rntekfkekrekr1!'
+  socket: /tmp/mysql.sock
+
+
