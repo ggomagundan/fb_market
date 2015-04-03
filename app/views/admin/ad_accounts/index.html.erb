@@ -1,0 +1,17 @@
+<% title "Admin/Ad Accounts" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for ad_account in @ad_accounts %>
+    <tr>
+      <td><%= ad_account.name %></td>
+      <td><%= link_to "Show", [:admin, ad_account] %></td>
+      <td><%= link_to "Edit", edit_admin_ad_account_path(ad_account) %></td>
+      <td><%= link_to "Destroy", [:admin, ad_account], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Admin/Ad Account", new_admin_ad_account_path %></p>

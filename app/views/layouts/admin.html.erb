@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><%= "(
+테스트서버)" if ENV["SERVER_ENV"] == "test_server" %> NeoGoodoc Admin</title>
+  <%= stylesheet_link_tag "admin/application", "admin/#{ controller_name}", :media => "all" %>
+  <%= javascript_include_tag "admin/application", "admin/#{ controller_name}" %>
+
+  <%= stylesheet_link_tag "/goodoc_bootstrap/css/bootstrap.css" %>
+  <%= stylesheet_link_tag "/goodoc_bootstrap/css/bootstrap-theme.css" %>
+  <%= stylesheet_link_tag "/goodoc_bootstrap/css/jquery-ui.css" %>
+  <%= stylesheet_link_tag "/goodoc_bootstrap/css/jquery.datetimepicker.css" %>
+  <%#= stylesheet_link_tag "/goodoc_bootstrap/css/datepicker.css" %>
+   <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+
+
+  <%= javascript_include_tag "/goodoc_bootstrap/js/bootstrap.js" %>
+  <%#= javascript_include_tag "/goodoc_bootstrap/js/bootstrap-datepicker.js" %>
+  <% javascript_include_tag "/goodoc_bootstrap/js/jquery.datetimepicker.js" %>
+  <%= javascript_include_tag "/goodoc_bootstrap/js/jquery-ui.js" %>
+  <%= javascript_include_tag "/goodoc_bootstrap/js/jquery-migrate-1.2.1.min.js" %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= hidden_field_tag :locale, I18n.locale %>
+  <div class="header">
+    <div class="container">
+      <%= render "layouts/navbar" %>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <% flash.each do |name, msg| %>
+        <div class="alert">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= content_tag :span, msg, :id => "flash_#{name}" %>
+        </div>
+      <% end %>
+      <% if ENV["SERVER_ENV"] == "test_server" %>
+        <div class="label label-info">테스트 서버입니다.</div>
+      <% end %>
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>
+

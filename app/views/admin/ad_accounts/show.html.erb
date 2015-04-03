@@ -1,0 +1,12 @@
+<% title "Admin/Ad Account" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ad_account.name %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_ad_account_path(@ad_account) %> |
+  <%= link_to "Destroy", [:admin, @ad_account], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_ad_accounts_path %>
+</p>

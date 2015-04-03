@@ -1,0 +1,17 @@
+<% title "Admin/Events" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for events in @events %>
+    <tr>
+      <td><%= events.name %></td>
+      <td><%= link_to "Show", [:admin, events] %></td>
+      <td><%= link_to "Edit", edit_admin_events_path(events) %></td>
+      <td><%= link_to "Destroy", [:admin, events], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Admin/Events", new_admin_events_path %></p>

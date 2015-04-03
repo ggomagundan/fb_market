@@ -1,0 +1,12 @@
+<% title "Main" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @main.name %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_main_path(@main) %> |
+  <%= link_to "Destroy", @main, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", mains_path %>
+</p>

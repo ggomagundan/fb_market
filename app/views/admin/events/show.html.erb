@@ -1,0 +1,12 @@
+<% title "Admin/Events" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @events.name %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_events_path(@events) %> |
+  <%= link_to "Destroy", [:admin, @events], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_events_path %>
+</p>
