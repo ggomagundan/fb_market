@@ -4,7 +4,7 @@ class Api::UsersController < Api::ApplicationController
   end
 
   def show
-   @graph = Koala::Facebook::API.new(params[:oauth_token])
+    @graph = Koala::Facebook::API.new(User.first.oauth_token)
    profile = @graph.get_object("me")
    binding.pry
   end
